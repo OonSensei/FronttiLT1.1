@@ -1,13 +1,20 @@
 import {useState, useEffect} from "react";
 import useNotes from "./stores/useNotes";
 import useCourses from "./stores/useCourses";
+import Listnotes from "./Listnotes";
 
 function AddShit(){
     const [coursename, setCoursename] = useState("");
     const [note, setNote] = useState("");
     const addNotes = useNotes((state) => state.addNotes)
     const courses = useCourses((state) => state.courses);
-    const notes = useNotes((state) => state.notes);
+    const fetchCourses = useCourses((state) => state.fetchCourses);
+    const fetchNotes = useNotes((state) => state.fetchNotes);
+
+    useEffect(() => {
+        fetchCourses();
+        fetchNotes();
+    }, []);
   
 
     const handleSave = () => {
@@ -42,6 +49,7 @@ function AddShit(){
                 placeholder="muistiinpanot"
             />
             <button onClick={handleSave}>Save</button>
+            <Listnotes coursename={coursename}/>
         </div>
     );
     
