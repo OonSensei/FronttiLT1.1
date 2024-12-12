@@ -23,7 +23,6 @@ function AddShit(){
         const time = new Date().toISOString()
         const p = {"text": note, "time": time, "course": {"name": coursename}};
         
-        setCoursename("");
         setNote("");
 
         addNotes(p);
