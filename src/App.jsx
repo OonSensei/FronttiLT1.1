@@ -3,6 +3,7 @@ import './App.css'
 import Notes from './Notes'
 import Courses from './Courses'
 import Courselist from './Courselist'
+import AddShit from './Addnote'
 
 
 function App() {
@@ -10,9 +11,10 @@ function App() {
     <>
       <div>
           testi
-      <Courses/>
-      <Notes/>
+      {/* <Courses/> */}
+      {/* <Notes/> */}
       <Courselist/>
+      <AddShit/>
       </div>
     </>
   )
