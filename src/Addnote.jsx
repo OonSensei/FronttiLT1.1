@@ -21,17 +21,21 @@ function AddShit(){
         if (note.length < 1) return
         if (coursename == "valitse arvo") return
         const time = new Date().toISOString()
-        const p = {"text": note, "time": time, "course": {"name": coursename}};
+        const p = {"text": note, "timestamp": time, "course": {"name": coursename}};
         
         setNote("");
 
         addNotes(p);
     };
 
+    const handleBack = () => {
+        setCoursename("");
+        setNote("");
+    }
 
     return (
         <div>
-            <select coursename="kurssi" id="kurssi" onChange={(e) => setCoursename(e.target.value)}>
+            <select value={coursename} id="kurssi" onChange={(e) => setCoursename(e.target.value)}>
                 <option> valitse arvo </option>
                 {
                     courses.map((p) => (
@@ -48,6 +52,7 @@ function AddShit(){
                 placeholder="muistiinpanot"
             />
             <button onClick={handleSave}>Save</button>
+            <button onClick={handleBack}>Back</button>
             <Listnotes coursename={coursename}/>
         </div>
     );

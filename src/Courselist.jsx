@@ -20,7 +20,7 @@ function Courselist() {
     return(
         <div>
             <select value={coursename} onChange={(e) => setCoursename(e.target.value)}>
-                <option>Kurssit</option>
+                <option value="">Kurssit</option>
                 {
                     courses.map((c, i) => (
                         
