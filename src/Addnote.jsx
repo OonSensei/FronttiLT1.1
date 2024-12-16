@@ -6,6 +6,7 @@ import Listnotes from "./Listnotes";
 function AddShit(){
     const [coursename, setCoursename] = useState("");
     const [note, setNote] = useState("");
+    const [newnotes, setNewnotes] = useState([]);
     const addNotes = useNotes((state) => state.addNotes)
     const courses = useCourses((state) => state.courses);
     const fetchCourses = useCourses((state) => state.fetchCourses);
@@ -26,16 +27,18 @@ function AddShit(){
         setNote("");
 
         addNotes(p);
+        setNewnotes([...newnotes, p]);
     };
 
     const handleBack = () => {
         setCoursename("");
         setNote("");
+        setNewnotes([]);
     }
 
     return (
         <div>
-            <select value={coursename} id="kurssi" onChange={(e) => setCoursename(e.target.value)}>
+            <select value={coursename} id="kurssi" onChange={(e) => setCoursename(e.target.value)}disabled={coursename !== ""}>
                 <option> valitse arvo </option>
                 {
                     courses.map((p) => (
@@ -53,7 +56,11 @@ function AddShit(){
             />
             <button onClick={handleSave}>Save</button>
             <button onClick={handleBack}>Back</button>
-            <Listnotes coursename={coursename}/>
+            <ul>
+                {newnotes.map((n) => {return(
+                    <li>{n.text}  </li>
+                )})}
+            </ul>
         </div>
     );
     
