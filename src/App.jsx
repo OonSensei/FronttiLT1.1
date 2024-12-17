@@ -4,6 +4,7 @@ import Notes from './Notes'
 import Courses from './Courses'
 import Courselist from './Courselist'
 import AddShit from './Addnote'
+import CreateCourse from './CreateCourse'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       {/* <Notes/> */}
       <Courselist/>
       <AddShit/>
+      <CreateCourse/>
       </div>
     </>
   )
