@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import useCourses from "./stores/useCourses";
 import useNotes from "./stores/useNotes";
 import Listnotes from "./Listnotes";
+import Notes from "./Notes";
 
 function Courselist() {
     const fetchCourses = useCourses((state) => state.fetchCourses);

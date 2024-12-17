@@ -14,7 +14,10 @@ import { create } from "zustand";
           }
     catch (error) {
         console.error(error.message)
-      }}
+      }},
+      deleteNote: (id) => set((state) => ({
+        notes: state.notes.filter((sid) => sid.id != id)
+      }))
   }));
 
 export default useNotes;

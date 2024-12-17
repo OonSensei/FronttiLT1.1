@@ -14,7 +14,7 @@ function CreateCourse(){
         const newCourse = {name: coursename, id: newID};
         addCourses(newCourse);
         setCoursename("");
-        setTulostus(`Kurssi ${coursename} lisatty ID:llä ${newID}`) 
+        setTulostus(`Opintojakso ${coursename} lisätty ID:llä ${newID}`) 
     };
 
     return(
