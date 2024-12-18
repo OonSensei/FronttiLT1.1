@@ -9,18 +9,12 @@ function AddShit(){
     const [newnotes, setNewnotes] = useState([]);
     const addNotes = useNotes((state) => state.addNotes)
     const courses = useCourses((state) => state.courses);
-    const fetchCourses = useCourses((state) => state.fetchCourses);
-    const fetchNotes = useNotes((state) => state.fetchNotes);
 
-    useEffect(() => {
-        fetchCourses();
-        fetchNotes();
-    }, []);
   
 
     const handleSave = () => {
         if (note.length < 1) return
-        if (coursename == "valitse arvo") return
+        if (coursename == "") return
         const time = new Date().toISOString()
         const p = {"text": note, "timestamp": time, "course": {"name": coursename}};
         
@@ -35,11 +29,11 @@ function AddShit(){
         setNote("");
         setNewnotes([]);
     }
-
+    if(courses.length == 0){return(<p>ei kurssia ei pääsyä</p>)}
     return (
         <div>
             <select value={coursename} id="kurssi" onChange={(e) => setCoursename(e.target.value)}disabled={coursename !== ""}>
-                <option> valitse arvo </option>
+                <option>valitse arvo</option>
                 {
                     courses.map((p) => (
                         
