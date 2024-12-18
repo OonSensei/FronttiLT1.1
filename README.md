@@ -1,8 +1,8 @@
-# React + Vite
+# Samun Lopputyö
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ohjelman saan toimimaan lataamalla node.js js npm jonka jälkeen suorittaa komennon npm install ja
+terminaaliin laittamalla komennon npm run dev
 
-Currently, two official plugins are available:
+Ohjelman toiminta:
+Ohjelma hakee tietoa opettajan backendistä. Ohjelmassa on mahdollista lisätä kursseja, listata kursseja, lisätä muistiinpanoja tietylle opintojaksolle ja listata kaikkien kurssien muistiinpanot tai vain valitun kurssin muistiinpanot.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

@@ -2,6 +2,8 @@ import {useState, useEffect} from "react";
 import useNotes from "./stores/useNotes";
 import useCourses from "./stores/useCourses";
 import Listnotes from "./Listnotes";
+import { Button } from "@/components/ui/button"
+import { Textarea } from "@/components/ui/textarea"
 
 function AddShit(){
     const [coursename, setCoursename] = useState("");
@@ -42,14 +44,14 @@ function AddShit(){
                 }
             </select>
 
-            <textarea
+            <Textarea
                 type="text"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 placeholder="muistiinpanot"
             />
-            <button onClick={handleSave}>Save</button>
-            <button onClick={handleBack}>Back</button>
+            <Button onClick={handleSave}>Save</Button>
+            <Button onClick={handleBack}>Back</Button>
             <ul>
                 {newnotes.map((n) => {return(
                     <li>{n.text}  </li>

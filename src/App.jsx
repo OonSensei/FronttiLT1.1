@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import Notes from './Notes'
-import Courses from './Courses'
+import { useEffect } from 'react'
+import "./index.css";
 import Courselist from './Courselist'
 import AddShit from './Addnote'
 import CreateCourse from './CreateCourse'
@@ -9,6 +7,10 @@ import Header from './Header'
 import { Routes, Route, Outlet } from 'react-router-dom'
 import useNotes from "./stores/useNotes";
 import useCourses from "./stores/useCourses";
+
+
+
+
 
 function App() {
 

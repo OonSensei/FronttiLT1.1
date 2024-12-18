@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import useCourses from "./stores/useCourses";
 import Courses from "./Courses";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+
 
 function CreateCourse(){
     const [coursename, setCoursename] = useState("");
@@ -20,14 +23,14 @@ function CreateCourse(){
     return(
         <div>
             <label htmlFor="course">Course</label>
-            <input 
+            <Input
             type="text"
             id="course"
             value={ coursename } 
             onChange={(c) => setCoursename(c.target.value)}
             placeholder="kurssi"
             />
-            <button onClick={handleSave}>Add</button>
+            <Button onClick={handleSave}>Add</Button>
             {tulostus !="" && <p>{tulostus}</p>}
         </div>
     )

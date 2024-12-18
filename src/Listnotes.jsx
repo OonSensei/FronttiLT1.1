@@ -1,4 +1,5 @@
 import useNotes from "./stores/useNotes";
+import { Button } from "@/components/ui/button"
 
 function Listnotes({coursename}){
     const notes = useNotes((state) => state.notes);
@@ -16,9 +17,9 @@ function Listnotes({coursename}){
                     return(
                         <div>
                     <li>ID:{note.course.id} Timestamp:{time}: {coursename ? "" : `${note.course.name} :`} {note.text}</li>
-                    <button onClick={() => {
+                    <Button onClick={() => {
                         deletebyID(note.id)
-                    }}>Poista</button>
+                    }}>Poista</Button>
                         </div>
                 )})}
             </ul>
